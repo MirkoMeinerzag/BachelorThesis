@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.projects.mallory">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <!-- ATTACK ONE -->
+        <activity
+            android:name=".M1_Attack1"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.projects.mallory.STARTM1ATT1" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- ATTACK TWO -->
+        <activity
+            android:name=".Attack2.M1_Attack2"
+            android:taskAffinity="com.projects.bob.ATTACK">
+            <intent-filter>
+                <action android:name="com.projects.mallory.STARTM1ATT2"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Attack2.M2_Attack2"></activity>
+
+        <!-- ATTACK THREE -->
+        <activity
+            android:name=".M1_Attack3"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.projects.mallory.StartM1Att3" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".M2_Attack3"
+            android:allowTaskReparenting="true"
+            android:taskAffinity="com.projects.alice.ATTACK">
+            <intent-filter>
+                <action android:name="com.projects.mallory.StartM2Att3" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

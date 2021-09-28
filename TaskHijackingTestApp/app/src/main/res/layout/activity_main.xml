@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="116dp"
         android:layout_marginTop="56dp"
+        android:onClick="InitializeAttOne"
         android:text="@string/init_btn_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -33,6 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
         android:layout_marginEnd="116dp"
+        android:onClick="HijackAttOne"
         android:text="@string/hijack_btn_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -54,6 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="116dp"
         android:layout_marginTop="136dp"
+        android:onClick="InitializeAttTwo"
         android:text="@string/init_btn_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -64,6 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="136dp"
         android:layout_marginEnd="116dp"
+        android:onClick="HijackAttTwo"
         android:text="@string/hijack_btn_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -86,6 +90,7 @@
         android:layout_marginStart="116dp"
         android:layout_marginTop="216dp"
         android:text="@string/init_btn_name"
+        android:onClick="InitializeAttThree"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -95,6 +100,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="120dp"
         android:layout_marginTop="296dp"
+        android:onClick="InitializeAttFour"
         android:text="@string/init_btn_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -105,6 +111,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="216dp"
         android:layout_marginEnd="116dp"
+        android:onClick="HijackAttThree"
         android:text="@string/hijack_btn_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -115,6 +122,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="296dp"
         android:layout_marginEnd="112dp"
+        android:onClick="HijackAttFour"
         android:text="@string/hijack_btn_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -125,6 +133,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="376dp"
         android:layout_marginEnd="112dp"
+        android:onClick="HijackAttFive"
         android:text="@string/hijack_btn_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -135,6 +144,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="456dp"
         android:layout_marginEnd="112dp"
+        android:onClick="HijackAttSix"
         android:text="@string/hijack_btn_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -178,6 +188,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="120dp"
         android:layout_marginTop="376dp"
+        android:onClick="InitializeAttFive"
         android:text="@string/init_btn_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -188,18 +199,21 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="120dp"
         android:layout_marginTop="456dp"
+        android:onClick="InitializeAttSix"
         android:text="@string/init_btn_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnShowBS"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="540dp"
-        android:text="Show Backstack"
+        android:layout_marginTop="20dp"
+        android:text="@string/backStack_lbl_name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btnInitSix" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
