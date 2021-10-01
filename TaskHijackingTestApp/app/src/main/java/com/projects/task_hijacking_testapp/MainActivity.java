@@ -75,17 +75,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void InitializeAttThree(View view) {
-        // TODO: Clear backstack, update backstack, move Activites to background
+        // TODO: Clear backstack
         Intent intentM1 = new Intent();
         intentM1.setAction("com.projects.mallory.StartM1Att3");
-        intentM1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        //intentM1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_NO_ANIMATION | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        UpdateBackStackView();
-
-
+        intentM1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_NO_ANIMATION | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         try {
-            //startActivities(intents);
             startActivity(intentM1);
+            // TODO: Update backstack view
         } catch (ActivityNotFoundException e) {
             // Activity not found, not all test apps installed
         }
@@ -103,11 +99,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void InitializeAttFour(View view) {
-        // TODO: Implement
+        Intent intentM1 = new Intent();
+        intentM1.setAction("com.projects.mallory.StartM1Att4");
+        intentM1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_NO_ANIMATION | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        try {
+            startActivity(intentM1);
+            // TODO: Update backstack view
+        } catch (ActivityNotFoundException e) {
+            // Activity not found, not all test apps installed
+        }
     }
 
     public void HijackAttFour(View view) {
-        // TODO: Implement
+        Intent startA1 = new Intent();
+        startA1.setAction("com.projects.alice.STARTA1ATT4");
+        startA1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        try {
+            startActivity(startA1);
+        } catch (ActivityNotFoundException e) {
+            // TODO: Activity not found, not all test apps installed
+        }
     }
 
     public void InitializeAttFive(View view) {

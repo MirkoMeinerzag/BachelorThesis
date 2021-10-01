@@ -12,42 +12,52 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
+        <!-- ATTACK ONE -->
         <activity
-            android:name=".Attack1.A1_Attack1"
+            android:name=".attack1.A1_Attack1"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.projects.alice.STARTA1ATT1" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
+        <!-- ATTACK TWO -->
         <activity
-            android:name=".Attack2.A1_Attack2"
+            android:name=".attack2.A1_Attack2"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.projects.alice.STARTA1ATT2"/>
+                <action android:name="com.projects.alice.STARTA1ATT2" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".Attack2.A2_Attack2"></activity>
+        <activity android:name=".attack2.A2_Attack2" />
 
+        <!-- ATTACK THREE -->
         <activity
-            android:name=".Attack3.A1_Attack3"
+            android:name=".attack3.A1_Attack3"
             android:exported="true"
-            android:launchMode="singleTask"
             android:taskAffinity="com.projects.alice.ATTACK">
             <intent-filter>
                 <action android:name="com.projects.alice.STARTA1ATT3" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".MainActivity"
-            android:taskAffinity="com.projects.alice.ATTACK">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- ATTACK FOUR -->
+        <activity
+            android:name=".attack4.A1_Attack4">
+            <intent-filter>
+                <action android:name="com.projects.alice.STARTA1ATT4" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
     </application>

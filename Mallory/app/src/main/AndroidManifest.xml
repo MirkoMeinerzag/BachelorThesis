@@ -13,30 +13,28 @@
         tools:ignore="GoogleAppIndexingWarning">
         <!-- ATTACK ONE -->
         <activity
-            android:name=".M1_Attack1"
+            android:name=".attack1.M1_Attack1"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.projects.mallory.STARTM1ATT1" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity>
-
-        <!-- ATTACK TWO -->
+        </activity> <!-- ATTACK TWO -->
         <activity
-            android:name=".Attack2.M1_Attack2"
+            android:name=".attack2.M1_Attack2"
             android:taskAffinity="com.projects.bob.ATTACK">
             <intent-filter>
-                <action android:name="com.projects.mallory.STARTM1ATT2"/>
+                <action android:name="com.projects.mallory.STARTM1ATT2" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".Attack2.M2_Attack2"></activity>
-
-        <!-- ATTACK THREE -->
+        <activity android:name=".attack2.M2_Attack2" /> <!-- ATTACK THREE -->
         <activity
-            android:name=".M1_Attack3"
-            android:exported="true">
+            android:name=".attack3.M1_Attack3"
+            android:exported="true"
+            android:taskAffinity="com.projects.mallory.MALTASK">
             <intent-filter>
                 <action android:name="com.projects.mallory.StartM1Att3" />
 
@@ -44,21 +42,28 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".M2_Attack3"
+            android:name=".attack3.M2_Attack3"
             android:allowTaskReparenting="true"
             android:taskAffinity="com.projects.alice.ATTACK">
             <intent-filter>
                 <action android:name="com.projects.mallory.StartM2Att3" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity>
-
-
-        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- ATTACK FOUR -->
+        <activity
+            android:name=".attack4.M1_Attack4"
+            android:taskAffinity="com.projects.alice">
+            <intent-filter>
+                <action android:name="com.projects.mallory.StartM1Att4" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
     </application>

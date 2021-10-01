@@ -1,4 +1,4 @@
-package com.projects.alice.Attack2;
+package com.projects.alice.attack2;
 
 import androidx.appcompat.app.AppCompatActivity;
 

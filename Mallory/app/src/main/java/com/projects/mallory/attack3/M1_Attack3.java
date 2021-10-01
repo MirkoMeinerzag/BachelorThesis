@@ -1,15 +1,12 @@
-package com.projects.mallory;
+package com.projects.mallory.attack3;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ActivityManager;
 import android.content.ActivityNotFoundException;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 
-import java.util.List;
+import com.projects.mallory.R;
 
 public class M1_Attack3 extends AppCompatActivity {
 

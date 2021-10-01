@@ -1,4 +1,4 @@
-package com.projects.alice.Attack2;
+package com.projects.alice.attack1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,9 +8,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+
 import com.projects.alice.R;
 
-public class A2_Attack2 extends AppCompatActivity {
+public class A1_Attack1 extends AppCompatActivity {
 
     private BroadcastReceiver br;
     @Override
@@ -18,24 +19,31 @@ public class A2_Attack2 extends AppCompatActivity {
         moveTaskToBack(true);
         overridePendingTransition(0, 0);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_a2__attack2);
+        setContentView(R.layout.activity_a1__attack1);
 
         br = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
-                Intent startB2 = new Intent();
-                startB2.setAction("com.projects.bob.STARTB2ATT2");
-                startB2.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                Intent startM1 = new Intent();
+                startM1.setAction("com.projects.mallory.STARTM1ATT1");
+                startM1.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 try{
-                    startActivity(startB2);
+                    startActivity(startM1);
                 } catch (ActivityNotFoundException ex){
                     //TODO: Activity not found, not all test apps installed
                 }
             }
         };
 
-        IntentFilter filter = new IntentFilter("com.projects.alice.HIJACKATT2");
+        IntentFilter filter = new IntentFilter("com.projects.alice.HIJACKATT1");
         registerReceiver(br, filter);
-        //TODO: Create broadcast receiver to start b2
+    }
+
+    @Override
+    protected  void onDestroy(){
+        super.onDestroy();
+        if(br != null){
+            unregisterReceiver(br);
+        }
     }
 }

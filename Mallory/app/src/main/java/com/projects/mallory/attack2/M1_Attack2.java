@@ -1,4 +1,4 @@
-package com.projects.mallory.Attack2;
+package com.projects.mallory.attack2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
