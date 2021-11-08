@@ -8,6 +8,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.util.Log;
+
 import com.projects.alice.R;
 
 public class A2_Attack2 extends AppCompatActivity {
@@ -29,7 +31,7 @@ public class A2_Attack2 extends AppCompatActivity {
                 try{
                     startActivity(startB2);
                 } catch (ActivityNotFoundException ex){
-                    //TODO: Activity not found, not all test apps installed
+                    Log.e("ERROR_TESTAPP", "Not all activities necessary for testing are installed!");
                 }
             }
         };

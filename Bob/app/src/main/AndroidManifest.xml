@@ -10,15 +10,28 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <!-- ATTACK TWO -->
-        <activity android:name=".Attack2.B2_Attack2"
+        <activity
+            android:name=".attack2.B2_Attack2"
             android:exported="true"
             android:launchMode="singleTask"
             android:taskAffinity="com.projects.bob.ATTACK">
             <intent-filter>
-                <action android:name="com.projects.bob.STARTB2ATT2"/>
+                <action android:name="com.projects.bob.STARTB2ATT2" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <!-- ATTACK FIVE -->
+        <activity android:name=".attack5.B2_Attack5"
+            android:allowTaskReparenting="true"
+            android:taskAffinity="com.projects.bob">
+            <intent-filter>
+                <action android:name="com.projects.bob.STARTB2ATT5" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

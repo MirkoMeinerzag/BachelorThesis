@@ -55,17 +55,43 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- ATTACK FOUR -->
+        </activity> <!-- ATTACK FOUR -->
         <activity
             android:name=".attack4.M1_Attack4"
             android:taskAffinity="com.projects.alice">
             <intent-filter>
                 <action android:name="com.projects.mallory.StartM1Att4" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity> <!-- ATTACK FIVE -->
+        <activity
+            android:name=".attack5.M1_Attack5"
+            android:taskAffinity="com.projects.bob">
+            <intent-filter>
+                <action android:name="com.projects.mallory.STARTM1ATT5" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".attack5.M2_Attack5"
+            android:taskAffinity="com.projects.bob">
+            <intent-filter>
+                <action android:name="com.projects.mallory.STARTM2ATT5" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity> <!-- ATTACK SIX -->
+        <activity android:name=".attack6.M1_Attack6">
+            <intent-filter>
+                <action android:name="com.projects.mallory.STARTM1ATT6" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".attack6.M2_Attack6"
+            android:taskAffinity="com.projects.alice"></activity>
     </application>
 
 </manifest>

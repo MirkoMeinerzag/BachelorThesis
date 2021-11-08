@@ -3,6 +3,7 @@ package com.projects.task_hijacking_testapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActivityManager;
+import android.app.TaskStackBuilder;
 import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             startActivity(startA1);
         } catch (ActivityNotFoundException e) {
-            // TODO: Activity not found, not all test apps installed
+            Log.e("ERROR_TESTAPP", "Not all activities necessary for testing are installed!");
         }
     }
 
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         try{
             startActivity(startA1);
         }catch (ActivityNotFoundException e){
-            // TODO: Activity not found, not all test apps installed
+            Log.e("ERROR_TESTAPP", "Not all activities necessary for testing are installed!");
         }
 
         Intent startM1 = new Intent();
@@ -62,14 +63,14 @@ public class MainActivity extends AppCompatActivity {
         try{
             startActivity(startM1);
         }catch (ActivityNotFoundException e){
-            // TODO: Activity not found, not all test apps installed
+            Log.e("ERROR_TESTAPP", "Not all activities necessary for testing are installed!");
         }
     }
 
     public void HijackAttTwo(View view) {
         Intent startHijacking = new Intent();
         startHijacking.setAction("com.projects.alice.HIJACKATT2");
-        startHijacking.addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
+        startHijacking.addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES | Intent.FLAG_ACTIVITY_NO_ANIMATION);
         getApplicationContext().sendBroadcast(startHijacking);
 
     }
@@ -83,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intentM1);
             // TODO: Update backstack view
         } catch (ActivityNotFoundException e) {
-            // Activity not found, not all test apps installed
+            Log.e("ERROR_TESTAPP", "Not all activities necessary for testing are installed!");
         }
     }
 
@@ -94,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             startActivity(startA1);
         } catch (ActivityNotFoundException e) {
-            // TODO: Activity not found, not all test apps installed
+            Log.e("ERROR_TESTAPP", "Not all activities necessary for testing are installed!");
         }
     }
 
@@ -106,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intentM1);
             // TODO: Update backstack view
         } catch (ActivityNotFoundException e) {
-            // Activity not found, not all test apps installed
+            Log.e("ERROR_TESTAPP", "Not all activities necessary for testing are installed!");
         }
     }
 
@@ -117,26 +118,55 @@ public class MainActivity extends AppCompatActivity {
         try {
             startActivity(startA1);
         } catch (ActivityNotFoundException e) {
-            // TODO: Activity not found, not all test apps installed
+            Log.e("ERROR_TESTAPP", "Not all activities necessary for testing are installed!");
         }
     }
 
     public void InitializeAttFive(View view) {
-        // TODO: Implement
-
+        Intent startA1 = new Intent();
+        startA1.setAction("com.projects.alice.STARTA1ATT5");
+        startA1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_NO_ANIMATION | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        try {
+            startActivity(startA1);
+        }catch(ActivityNotFoundException e){
+            Log.e("ERROR_TESTAPP", "Not all activities necessary for testing are installed!");
+        }
     }
 
     public void HijackAttFive(View view) {
-        // TODO: Implement
+        Intent startM1 = new Intent();
+        startM1.setAction("com.projects.mallory.STARTM1ATT5");
+        startM1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_NO_ANIMATION | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        Log.d("DEBUG", "Intents created");
+
+        try{
+            startActivity(startM1);
+        }catch(ActivityNotFoundException e){
+            Log.e("ERROR_TESTAPP", "Not all activities necessary for testing are installed!");
+        }
+
     }
 
     public void InitializeAttSix(View view) {
-        // TODO: Implement
-
+        Intent startA1 = new Intent();
+        startA1.setAction("com.projects.alice.STARTA1ATT6");
+        startA1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_NO_ANIMATION | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        Intent startM1 = new Intent();
+        startM1.setAction("com.projects.mallory.STARTM1ATT6");
+        startM1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_NO_ANIMATION | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        try{
+            startActivity(startM1);
+            startActivity(startA1);
+        }catch(ActivityNotFoundException e){
+            Log.e("ERROR_TESTAPP", "Not all activities necessary for testing are installed!");
+        }
     }
 
     public void HijackAttSix(View view) {
-        // TODO: Implement
+        Intent startHijacking = new Intent();
+        startHijacking.setAction("com.projects.mallory.HIJACKATT6");
+        startHijacking.addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
+        getApplicationContext().sendBroadcast(startHijacking);
     }
 
     private void UpdateBackStackView() {
