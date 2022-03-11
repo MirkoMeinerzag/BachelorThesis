@@ -16,6 +16,11 @@
             android:name=".attack1.A1_Attack1"
             android:exported="true">
             <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
                 <action android:name="com.projects.alice.STARTA1ATT1" />
 
                 <category android:name="android.intent.category.DEFAULT" />

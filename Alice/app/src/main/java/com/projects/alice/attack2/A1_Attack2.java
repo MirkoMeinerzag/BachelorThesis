@@ -17,7 +17,6 @@ public class A1_Attack2 extends AppCompatActivity {
         setContentView(R.layout.activity_a1__attack2);
 
         Intent startA2 = new Intent(this, A2_Attack2.class);
-        startA2.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         startActivity(startA2);
     }
 }
