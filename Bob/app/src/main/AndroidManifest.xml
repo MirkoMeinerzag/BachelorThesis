@@ -13,11 +13,9 @@
         <activity
             android:name=".attack2.B2_Attack2"
             android:exported="true"
-            android:launchMode="singleTask"
-            android:taskAffinity="com.projects.bob.ATTACK">
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="com.projects.bob.STARTB2ATT2" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

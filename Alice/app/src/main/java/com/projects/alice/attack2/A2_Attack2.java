@@ -17,8 +17,6 @@ public class A2_Attack2 extends AppCompatActivity {
     private BroadcastReceiver br;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        moveTaskToBack(true);
-        overridePendingTransition(0, 0);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_a2__attack2);
 
@@ -27,7 +25,6 @@ public class A2_Attack2 extends AppCompatActivity {
             public void onReceive(Context context, Intent intent) {
                 Intent startB2 = new Intent();
                 startB2.setAction("com.projects.bob.STARTB2ATT2");
-                startB2.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 try{
                     startActivity(startB2);
                 } catch (ActivityNotFoundException ex){
@@ -39,4 +36,11 @@ public class A2_Attack2 extends AppCompatActivity {
         IntentFilter filter = new IntentFilter("com.projects.alice.HIJACKATT2");
         registerReceiver(br, filter);
     }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        unregisterReceiver(br);
+    }
+
 }

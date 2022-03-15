@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.projects.alice.R;
 
@@ -16,8 +17,6 @@ public class A1_Attack1 extends AppCompatActivity {
     private BroadcastReceiver br;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        moveTaskToBack(true);
-        overridePendingTransition(0, 0);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_a1__attack1);
 
@@ -26,7 +25,6 @@ public class A1_Attack1 extends AppCompatActivity {
             public void onReceive(Context context, Intent intent) {
                 Intent startM1 = new Intent();
                 startM1.setAction("com.projects.mallory.STARTM1ATT1");
-                startM1.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 try{
                     startActivity(startM1);
                 } catch (ActivityNotFoundException ex){
@@ -37,6 +35,7 @@ public class A1_Attack1 extends AppCompatActivity {
 
         IntentFilter filter = new IntentFilter("com.projects.alice.HIJACKATT1");
         registerReceiver(br, filter);
+        Log.d("Alice", "A1 started");
     }
 
     @Override

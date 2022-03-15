@@ -11,8 +11,6 @@ public class A1_Attack2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        moveTaskToBack(true);
-        overridePendingTransition(0, 0);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_a1__attack2);
 

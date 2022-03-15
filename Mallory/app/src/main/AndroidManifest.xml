@@ -23,14 +23,15 @@
         </activity> <!-- ATTACK TWO -->
         <activity
             android:name=".attack2.M1_Attack2"
-            android:taskAffinity="com.projects.bob.ATTACK">
+            android:taskAffinity="com.projects.bob">
             <intent-filter>
                 <action android:name="com.projects.mallory.STARTM1ATT2" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".attack2.M2_Attack2" /> <!-- ATTACK THREE -->
+        <activity android:name=".attack2.M2_Attack2"/>
+        <!-- ATTACK THREE -->
         <activity
             android:name=".attack3.M1_Attack3"
             android:exported="true"
