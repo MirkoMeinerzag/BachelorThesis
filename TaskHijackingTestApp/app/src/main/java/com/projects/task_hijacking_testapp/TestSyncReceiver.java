@@ -21,6 +21,7 @@ public class TestSyncReceiver extends BroadcastReceiver {
 
     private static final String INTENT_ACTION_TEST_1 = "testapp.intent.action.ACTION_START_TEST_1";
     private static final String INTENT_ACTION_TEST_2 = "testapp.intent.action.ACTION_START_TEST_2";
+    private static final String INTENT_ACTION_TEST_3 = "testapp.intent.action.ACTION_START_TEST_3";
 
     private static final String MALLORY_PACKAGE_NAME = "com.projects.mallory";
     private static final String ALICE_PACKAGE_NAME = "com.projects.alice";
@@ -54,6 +55,17 @@ public class TestSyncReceiver extends BroadcastReceiver {
 
                 }
                 HijackAttTwo(context);
+                break;
+            case INTENT_ACTION_TEST_3:
+                InitializeAttThree(context);
+                try{
+                    TimeUnit.SECONDS.sleep(2);
+                }catch(InterruptedException e){
+
+                }
+                HijackAttThree(context);
+                break;
+
         }
     }
 
@@ -95,12 +107,34 @@ public class TestSyncReceiver extends BroadcastReceiver {
             Log.e(TAG, "Error initializing Attack 2: Activity M1 missing");
         }
     }
-    public void HijackAttTwo(Context ctx) {
+
+    private void HijackAttTwo(Context ctx) {
         Intent startHijacking = new Intent();
         startHijacking.setAction("com.projects.alice.HIJACKATT2");
         startHijacking.addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES | Intent.FLAG_ACTIVITY_NO_ANIMATION);
         ctx.sendBroadcast(startHijacking);
+    }
 
+    private void InitializeAttThree(Context ctx) {
+        Intent intentM1 = new Intent();
+        intentM1.setClassName(MALLORY_PACKAGE_NAME, MALLORY_PACKAGE_NAME + ".attack3.M1_Attack3");
+        intentM1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        try {
+            ctx.startActivity(intentM1);
+        } catch (ActivityNotFoundException e) {
+            Log.e(TAG, "Error initializing Attack 3: Activity M1 missing");
+        }
+    }
+
+    private void HijackAttThree(Context ctx) {
+        Intent startA1 = new Intent();
+        startA1.setClassName(ALICE_PACKAGE_NAME, ALICE_PACKAGE_NAME + ".attack3.A1_Attack3");
+        startA1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        try {
+            ctx.startActivity(startA1);
+        } catch (ActivityNotFoundException e) {
+            Log.e(TAG, "Error performing Attack 3: Activity A1 missing");
+        }
     }
 }
 

@@ -12,18 +12,10 @@ public class M1_Attack3 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        moveTaskToBack(true);
-        overridePendingTransition(0, 0);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_m1__attack3);
 
-        Intent intentM2 = new Intent();
-        intentM2.setAction("com.projects.mallory.StartM2Att3");
-        intentM2.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-        try{
-            startActivity(intentM2);
-        }catch (ActivityNotFoundException e){
-
-        }
+        Intent intentM2 = new Intent(this, M2_Attack3.class);
+        startActivity(intentM2);
     }
 }

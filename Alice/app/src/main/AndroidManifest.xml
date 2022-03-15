@@ -39,7 +39,7 @@
         <activity
             android:name=".attack3.A1_Attack3"
             android:exported="true"
-            android:taskAffinity="com.projects.alice.ATTACK">
+            android:taskAffinity="com.projects.alice">
             <intent-filter>
                 <action android:name="com.projects.alice.STARTA1ATT3" />
 
