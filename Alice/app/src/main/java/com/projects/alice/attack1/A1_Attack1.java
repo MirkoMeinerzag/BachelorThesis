@@ -32,10 +32,11 @@ public class A1_Attack1 extends AppCompatActivity {
                 }
             }
         };
-
         IntentFilter filter = new IntentFilter("com.projects.alice.HIJACKATT1");
         registerReceiver(br, filter);
-        Log.d("Alice", "A1 started");
+        Log.i("ALICE", "A1_Attack1 Activity started.");
+
+        RegisterFinishReceiver();
     }
 
     @Override
@@ -44,5 +45,25 @@ public class A1_Attack1 extends AppCompatActivity {
         if(br != null){
             unregisterReceiver(br);
         }
+        if(finishReceiver != null){
+            unregisterReceiver(finishReceiver);
+        }
+    }
+
+    private void RegisterFinishReceiver(){
+        IntentFilter filter = new IntentFilter();
+        filter.addAction("com.projects.task_hijacking_testapp.FINISH");
+        registerReceiver(finishReceiver, filter);
+    }
+
+    BroadcastReceiver finishReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            finish();
+        }
+    };
+
+    public void finish() {
+        super.finish();
     }
 }

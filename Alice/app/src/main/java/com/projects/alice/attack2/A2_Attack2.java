@@ -35,12 +35,36 @@ public class A2_Attack2 extends AppCompatActivity {
 
         IntentFilter filter = new IntentFilter("com.projects.alice.HIJACKATT2");
         registerReceiver(br, filter);
+        Log.i("ALICE", "A2_Attack2 Activity started.");
+
+        RegisterFinishReceiver();
     }
 
     @Override
-    protected void onDestroy(){
+    protected  void onDestroy(){
         super.onDestroy();
-        unregisterReceiver(br);
+        if(finishReceiver != null){
+            unregisterReceiver(finishReceiver);
+        }
+        if(br != null){
+            unregisterReceiver(br);
+        }
     }
 
+    private void RegisterFinishReceiver(){
+        IntentFilter filter = new IntentFilter();
+        filter.addAction("com.projects.task_hijacking_testapp.FINISH");
+        registerReceiver(finishReceiver, filter);
+    }
+
+    BroadcastReceiver finishReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            finish();
+        }
+    };
+
+    public void finish() {
+        super.finish();
+    }
 }
