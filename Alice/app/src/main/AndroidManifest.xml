@@ -11,11 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <meta-data android:name="allowForeignActivities" android:value="false"/>
         <!-- ATTACK ONE -->
         <activity
             android:name=".attack1.A1_Attack1"
             android:exported="true">
-
+            <meta-data android:name="isSensitiveActivity" android:value="true"/>
             <intent-filter>
                 <action android:name="com.projects.alice.STARTA1ATT1" />
 

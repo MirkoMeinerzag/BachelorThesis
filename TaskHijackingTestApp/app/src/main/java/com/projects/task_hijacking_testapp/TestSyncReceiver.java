@@ -5,10 +5,13 @@ import android.app.ActivityManager;
 import android.app.ActivityOptions;
 import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.lang.reflect.*;
@@ -70,8 +73,8 @@ public class TestSyncReceiver extends BroadcastReceiver {
                 }catch(InterruptedException e){
 
                 }
-                HijackAttThree(context);
-                Log.i(TAG, "Finished Test 3");
+                //HijackAttThree(context);
+                //Log.i(TAG, "Finished Test 3");
                 break;
             case INTENT_ACTION_TEST_4:
                 Log.i(TAG, "Started Test 4");
@@ -119,6 +122,7 @@ public class TestSyncReceiver extends BroadcastReceiver {
 
     private void InitializeAttOne(Context ctx) {
         Intent startA1 = new Intent();
+        Log.i(TAG, "Class of context: " + ctx.getClass());
         startA1.setClassName(ALICE_PACKAGE_NAME, ALICE_PACKAGE_NAME + ".attack1.A1_Attack1");
         startA1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         try {
@@ -175,13 +179,26 @@ public class TestSyncReceiver extends BroadcastReceiver {
     }
 
     private void HijackAttThree(Context ctx) {
-        Intent startA1 = new Intent();
+        /*Intent startA1 = new Intent();
         startA1.setClassName(ALICE_PACKAGE_NAME, ALICE_PACKAGE_NAME + ".attack3.A1_Attack3");
         startA1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         try {
             ctx.startActivity(startA1);
         } catch (ActivityNotFoundException e) {
             Log.e(TAG, "Error performing Attack 3: Activity A1 missing");
+        }
+        Intent intent = new Intent();
+        intent.setComponent(new ComponentName(ALICE_PACKAGE_NAME, ALICE_PACKAGE_NAME + ".attack3.A1_Attack3"));
+        intent.setAction(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        ctx.startActivity(intent);*/
+        String command = "am start -n com.projects.alice/com.projects.alice.attack3.A1_Attack3";
+        try {
+            //Process p = Runtime.getRuntime().exec(command);
+
+        }catch (Exception ex){
+            Log.e(TAG, "Exception while hijacking in scenario three: " + ex.toString());
         }
     }
 

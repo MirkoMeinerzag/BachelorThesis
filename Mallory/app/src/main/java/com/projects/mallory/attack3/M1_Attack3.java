@@ -16,6 +16,7 @@ public class M1_Attack3 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        moveTaskToBack(false);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_m1__attack3);
 
