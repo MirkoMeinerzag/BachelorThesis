@@ -1,0 +1,9 @@
+{"Package": "com.projects.bob", "taskAffinities": [], "launchMode": true, "singleTask": 1, "allowTaskReparenting": true, "ownTaskAffinity": true}
+{"Package": "com.projects.alice", "taskAffinities": []}
+{"Package": "com.projects.task_hijacking_testapp", "taskAffinities": []}
+{"Package": "com.projects.alice", "taskAffinities": []}
+{"Package": "com.projects.mallory", "taskAffinities": ["com.projects.alice", "com.projects.bob"], "launchMode": true, "singleTask": 2, "taskAffinity": true, "singleInstance": 1, "allowTaskReparenting": true}
+{"Package": "com.projects.bob", "taskAffinities": [], "launchMode": true, "singleTask": 1, "allowTaskReparenting": true, "ownTaskAffinity": true}
+{"Package": "com.projects.mallory", "taskAffinities": ["com.projects.bob", "com.projects.alice"], "launchMode": true, "singleTask": 2, "taskAffinity": true, "singleInstance": 1, "allowTaskReparenting": true}
+{"Package": "com.projects.alice", "taskAffinities": []}
+{"Package": "com.projects.task_hijacking_testapp", "taskAffinities": []}

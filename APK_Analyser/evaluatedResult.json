@@ -1,0 +1,1 @@
+{"allowTaskReparenting": 4, "launchMode": 4, "singleTop": 0, "singleTask": 4, "singleInstance": 2, "singleInstancePerTask": 0, "ownTaskAffinity": 2, "taskAffinity": 2, "emptyTaskAffinity": 0, "excludeFromRecents": 0, "alwaysRetainTaskState": 0, "taskAffinities": {"com.projects.alice": 2, "com.projects.bob": 2}, "total": 9}
