@@ -2,8 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.projects.alice">
-    <uses-permission android:name="android.permission.CAMERA"></uses-permission>
-    <uses-permission android:name="android.permission.BLUETOOTH"></uses-permission>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,63 +11,30 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <meta-data android:name="allowForeignActivities" android:value="false"/>
-        <!-- ATTACK ONE -->
-        <activity
-            android:name=".attack1.A1_Attack1"
-            android:exported="true">
+        <!--<meta-data android:name="allowForeignActivities" android:value="false"/>-->
+        <!-- ATT1: StrandHogg -->
+        <activity android:name=".ATT1.A1">
             <meta-data android:name="isSensitiveActivity" android:value="true"/>
             <intent-filter>
-                <action android:name="com.projects.alice.STARTA1ATT1" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity> <!-- ATTACK TWO -->
-        <activity
-            android:name=".attack2.A1_Attack2"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.projects.alice.STARTA1ATT2" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".attack2.A2_Attack2" />
-        <!-- ATTACK THREE -->
-        <activity
-            android:name=".attack3.A1_Attack3">
-            <intent-filter>
-                <action android:name="com.projects.alice.STARTA1ATT3" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity> <!-- ATT2: Victim reparenting -->
+        <activity
+            android:name=".ATT2.A1"
+            android:exported="true">
+            <meta-data android:name="isSensitiveActivity" android:value="true"/>
         </activity>
-        <!-- ATTACK FOUR -->
-        <activity android:name=".attack4.A1_Attack4">
-            <intent-filter>
-                <action android:name="com.projects.alice.STARTA1ATT4" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity> <!-- ATTACK FIVE -->
-        <activity android:name=".attack5.A1_Attack5">
-            <intent-filter>
-                <action android:name="com.projects.alice.STARTA1ATT5" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".attack5.A2_Attack5" />
-        <!-- ATTACK SIX -->
-        <activity android:name=".attack6.A1_Attack6">
-            <intent-filter>
-                <action android:name="com.projects.alice.STARTA1ATT6" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+        <activity android:name=".ATT2.A2" /> <!-- ATT3: Attacker reparenting -->
+        <activity
+            android:name=".ATT3.A1"
+            android:exported="true">
+            <meta-data android:name="isSensitiveActivity" android:value="true"/>
+        </activity> <!-- ATT4: Task infiltration -->
+        <activity android:name=".ATT4.A1"
+            android:exported="true">
+            <meta-data android:name="isSensitiveActivity" android:value="true"/>
         </activity>
 
     </application>

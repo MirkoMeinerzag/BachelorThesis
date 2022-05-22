@@ -10,83 +10,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning">
-        <!-- ATTACK ONE -->
+        tools:ignore="GoogleAppIndexingWarning"> <!-- ATT1: StrandHogg -->
         <activity
-            android:name=".attack1.M1_Attack1"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.projects.mallory.STARTM1ATT1" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <!-- ATTACK TWO -->
+            android:name=".ATT1.M1"
+            android:exported="true"
+            android:launchMode="singleInstance" />
         <activity
-            android:name=".attack2.M1_Attack2"
-            android:taskAffinity="com.projects.bob">
-            <intent-filter>
-                <action android:name="com.projects.mallory.STARTM1ATT2" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".attack2.M2_Attack2"/>
-
-        <!-- ATTACK THREE -->
-        <activity
-            android:name=".attack3.M1_Attack3">
-            <intent-filter>
-                <action android:name="com.projects.mallory.StartM1Att3" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".attack3.M2_Attack3"
+            android:name=".ATT1.M2"
             android:allowTaskReparenting="true"
-            android:taskAffinity="com.projects.alice">
-        </activity>
-        <!-- ATTACK FOUR -->
+            android:taskAffinity="com.projects.alice" /> <!-- ATT2: Victim reparenting -->
         <activity
-            android:name=".attack4.M1_Attack4"
-            android:taskAffinity="com.projects.alice">
-            <intent-filter>
-                <action android:name="com.projects.mallory.StartM1Att4" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity> <!-- ATTACK FIVE -->
+            android:name=".ATT2.M1"
+            android:exported="true"
+            android:taskAffinity="com.projects.bob" />
         <activity
-            android:name=".attack5.M1_Attack5"
-            android:taskAffinity="com.projects.bob">
-            <intent-filter>
-                <action android:name="com.projects.mallory.STARTM1ATT5" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
+            android:name=".ATT2.M2"
+            android:exported="true"
+            android:taskAffinity="com.projects.bob" /> <!-- ATT3: Attacker reparenting -->
         <activity
-            android:name=".attack5.M2_Attack5"
-            android:taskAffinity="com.projects.bob">
-            <intent-filter>
-                <action android:name="com.projects.mallory.STARTM2ATT5" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity> <!-- ATTACK SIX -->
-        <activity android:name=".attack6.M1_Attack6">
-            <intent-filter>
-                <action android:name="com.projects.mallory.STARTM1ATT6" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".attack6.M2_Attack6"
-            android:taskAffinity="com.projects.alice"></activity>
+            android:name=".ATT3.M1"
+            android:exported="true" />
+        <activity
+            android:name=".ATT3.M2"
+            android:allowTaskReparenting="true"
+            android:taskAffinity="com.projects.alice" /> <!-- ATT4: Task infiltration -->
+        <activity android:name=".ATT4.M1"
+            android:exported="true"/>
+        <activity android:name=".ATT4.M2"
+            android:taskAffinity="com.projects.alice"/>
     </application>
 
 </manifest>
