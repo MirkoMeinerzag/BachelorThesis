@@ -115,7 +115,7 @@ if __name__ == '__main__':
     dataLock = mp.Lock()
     crawlerProcess = mp.Process(target=crawl_apks, args=('dataset', apkFileQueue,))
     crawlerProcess.start()
-    analyzerPool = mp.Pool(8, analyse, (apkFileQueue, dataLock,))
+    analyzerPool = mp.Pool(16, analyse, (apkFileQueue, dataLock,))
     crawlerProcess.join()
     print("Finished")
     #crawl_apks("dataset", 8)

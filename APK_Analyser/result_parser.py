@@ -34,7 +34,7 @@ def digestResults():
                             result[key][affinity] = 1
                     continue
                 result[key] += 1
-    
+    result["taskAffinities"] = sorted(result["taskAffinities"].items(), key=lambda x: x[1], reverse=True)    
     with open("evaluatedResult.json", "w") as evalFile:
         json.dump(result, evalFile, indent=4)
 
