@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.projects.mallory.ATT4.M2;
 import com.projects.mallory.R;
 
 public class M1 extends AppCompatActivity {

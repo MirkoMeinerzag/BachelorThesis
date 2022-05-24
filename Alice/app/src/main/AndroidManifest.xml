@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <!--<meta-data android:name="allowForeignActivities" android:value="false"/>-->
+        <meta-data android:name="allowForeignActivities" android:value="false"/>
         <!-- ATT1: StrandHogg -->
         <activity android:name=".ATT1.A1">
             <meta-data android:name="isSensitiveActivity" android:value="true"/>

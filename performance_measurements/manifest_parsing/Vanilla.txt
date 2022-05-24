@@ -1,0 +1,10 @@
+PERFORMANCE_ANALYSIS: Package parsing took 19 ms
+PERFORMANCE_ANALYSIS: Package parsing took 22 ms
+PERFORMANCE_ANALYSIS: Package parsing took 11 ms
+PERFORMANCE_ANALYSIS: Package parsing took 11 ms
+PERFORMANCE_ANALYSIS: Package parsing took 19 ms
+PERFORMANCE_ANALYSIS: Package parsing took 24 ms
+PERFORMANCE_ANALYSIS: Package parsing took 23 ms
+PERFORMANCE_ANALYSIS: Package parsing took 9 ms
+PERFORMANCE_ANALYSIS: Package parsing took 27 ms
+PERFORMANCE_ANALYSIS: Package parsing took 9 ms
